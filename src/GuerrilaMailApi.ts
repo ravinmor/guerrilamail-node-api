@@ -1,4 +1,4 @@
-import axios from "axios"
+import axios from "axios";
 
 import {
     GMCheckEmailInterface,
@@ -53,9 +53,9 @@ class GuerrilaMailApi {
         };
 
         const emailData = await axios.get(this.url, { params })
-            .then(result => result.data)
-            .catch(err => {
-                throw new Error(err);
+            .then((result: any) => result.data)
+            .catch((err: Error ) => {
+                throw new Error(err.message);
             });
 
         await this.updateProperties(emailData);
@@ -76,9 +76,9 @@ class GuerrilaMailApi {
         };
 
         const emailData = await axios.get(this.url, { params })
-            .then(result => result.data)
-            .catch(err => {
-                throw new Error(err);
+            .then((result: any) => result.data)
+            .catch((err: Error ) => {
+                throw new Error(err.message);
             });
 
         await this.updateProperties(emailData);
@@ -101,9 +101,9 @@ class GuerrilaMailApi {
         };
 
         const emailData = await axios.get(this.url, { params })
-            .then(result => result.data)
-            .catch(err => {
-                throw new Error(err);
+            .then((result: any) => result.data)
+            .catch((err: Error ) => {
+                throw new Error(err.message);
             });
         
         if(emailData.error) {
@@ -129,9 +129,9 @@ class GuerrilaMailApi {
         };
 
         const emailData = await axios.get(this.url, { params })
-            .then(result => result.data)
-            .catch(err => {
-                throw new Error(err);
+            .then((result: any) => result.data)
+            .catch((err: Error ) => {
+                throw new Error(err.message);
             });
 
         if(!emailData.email) {
@@ -156,9 +156,9 @@ class GuerrilaMailApi {
         };
 
         const emailData = await axios.get(this.url, { params })
-            .then(result => result.data)
-            .catch(err => {
-                throw new Error(err);
+            .then((result: any) => result.data)
+            .catch((err: Error ) => {
+                throw new Error(err.message);
             });
 
         return emailData;
@@ -180,9 +180,9 @@ class GuerrilaMailApi {
         };
 
         const emailData = await axios.delete(this.url, { params })
-            .then(result => result.data)
-            .catch(err => {
-                throw new Error(err);
+            .then((result: any) => result.data)
+            .catch((err: Error ) => {
+                throw new Error(err.message);
             });
 
 
@@ -204,9 +204,9 @@ class GuerrilaMailApi {
         };
 
         const emailData = await axios.delete(this.url, { params })
-            .then(result => result.data)
-            .catch(err => {
-                throw new Error(err);
+            .then((result: any) => result.data)
+            .catch((err: Error ) => {
+                throw new Error(err.message);
             });
 
         await this.get_email_list();
@@ -229,9 +229,9 @@ class GuerrilaMailApi {
         };
 
         const emailData = await axios.get(this.url, { params })
-            .then(result => result.data)
-            .catch(err => {
-                throw new Error(err); 
+            .then((result: any) => result.data)
+            .catch((err: Error ) => {
+                throw new Error(err.message);
             });
 
         if(!emailData.email) {
