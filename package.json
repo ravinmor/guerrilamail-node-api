@@ -2,7 +2,7 @@
   "name": "guerrillamail-node-api",
   "version": "1.0.3",
   "description": "A nodejs api to interact with guerrilamail api",
-  "main": "src/index.ts",
+  "main": "./index.ts",
   "scripts": {
     "test": "jest --no-cache"
   },
