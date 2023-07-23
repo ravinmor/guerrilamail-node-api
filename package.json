@@ -11,7 +11,10 @@
     "url": "git+https://github.com/ravinmor/guerrillmail-node-api.git"
   },
   "keywords": [
-    "sky"
+    "guerrilamail",
+    "fakeemail",
+    "antispam",
+    "guerrilamail-api"
   ],
   "author": "Ravin Mor",
   "license": "MIT",
