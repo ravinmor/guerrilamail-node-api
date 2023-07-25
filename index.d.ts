@@ -8,7 +8,7 @@ import {
     GenericEmailDataInterface,
     OlderListInterface,
     SetUserInterface
-} from "./src/Interfaces";
+} from "./interfaces/Interfaces";
 
 declare module 'guerrillamail-node-api' {
     export class GuerrillamailNodeApi {
