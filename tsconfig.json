@@ -1,7 +1,7 @@
 {
   "include": [
-    "src",
-    "index.ts"
+    "src/*.ts",
+    "index.d.ts"
   ],
   "ts-node": {
     "moduleTypes": {
