@@ -12,7 +12,7 @@
     "target": "es6",
     "module": "commonjs",
     "rootDir": "./", 
-    "outDir": "./dist", 
+    "outDir": "./dist",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true

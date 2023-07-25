@@ -19,7 +19,7 @@
     "guerrilamail-api"
   ],
   "files": [
-    "lib/**/*"
+    "./dist/**/*"
   ],
   "scripts": {
     "build": "tsc",
