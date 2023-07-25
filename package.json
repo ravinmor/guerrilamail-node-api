@@ -19,9 +19,9 @@
     "guerrilamail-api"
   ],
   "files": [
-    "./dist/**/*"
+    "./dist"
   ],
-  "types": "./dist/src/GuerrilaMailApi.d.ts",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest --no-cache"
