@@ -1,6 +1,6 @@
 {
   "name": "guerrillamail-node-api",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "A nodejs api to interact with guerrilamail api",
   "author": "Ravin Mor",
   "license": "MIT",
