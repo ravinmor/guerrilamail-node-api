@@ -1,6 +1,6 @@
 {
   "name": "guerrillamail-node-api",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A nodejs api to interact with guerrilamail api",
   "author": "Ravin Mor",
   "license": "MIT",
@@ -25,7 +25,7 @@
     "build": "tsc",
     "test": "jest --no-cache"
   },
-  "prepare" : "yarn build",
+  "prepare": "yarn build",
   "dependencies": {
     "axios": "0.27.2"
   },
