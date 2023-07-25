@@ -11,7 +11,7 @@ import {
     OlderListInterface,
     SetUserInterface,
     GuerrillaMailOptionsInterface
-} from "./Types";
+} from "./Interfaces";
 
 class GuerrilaMailApi {
     private url: string;
