@@ -4,7 +4,7 @@ export interface GuerrillaMailOptionsInterface {
     lang?: string;
 }
 
-export interface GMEmailInterface {
+export interface EmailInterface {
     email_addr: string;
     email_user: string;
 	email_timestamp: number;
@@ -12,7 +12,7 @@ export interface GMEmailInterface {
 	sid_token: string;
 }
 
-export interface GMGenericEmailDataInterface {
+export interface GenericEmailDataInterface {
     email_addr?: string;
     email_user?: string;
     email_timestamp?: number | undefined;
@@ -23,14 +23,14 @@ export interface GMGenericEmailDataInterface {
     alias_error?: string;
     site_id?: number | undefined;
     site?: string;
-    list?: GMFetchEmailInterface[] | [];
+    list?: FetchEmailType[] | [];
 	count?: number | undefined;
 	users?: number | undefined;
     deleted_ids?: string[];
-    inboxDsc?: GMFetchEmailInterface[] | [];
+    inboxDsc?: FetchEmailType[] | [];
 }
 
-export interface GMSetUserInterface {
+export interface SetUserInterface {
     alias_error: string;
 	alias: string;
     email_addr: string;
@@ -42,8 +42,8 @@ export interface GMSetUserInterface {
     auth: AuthResponseInterface;
 }
 
-export interface GMCheckEmailInterface {
-    list: GMFetchEmailInterface[] | [];
+export interface CheckEmailInterface {
+    list: FetchEmailType[] | [];
     email: string;
 	alias: string;
 	ts: number;
@@ -54,8 +54,8 @@ export interface GMCheckEmailInterface {
     auth: AuthResponseInterface;
 }
 
-export interface GMEmailListInterface {
-    list: GMFetchEmailInterface[] | [];
+export interface EmailListInterface {
+    list: FetchEmailType[] | [];
 	count: number;
     email: string;
 	alias: string;
@@ -65,7 +65,7 @@ export interface GMEmailListInterface {
     auth: AuthResponseInterface;
 }
 
-export interface GMFetchEmailInterface {
+export type FetchEmailType = {
     mail_from: string;
     mail_timestamp: number;
     mail_read: number;
@@ -83,13 +83,13 @@ export interface GMFetchEmailInterface {
     size: number;
 }
 
-export interface GMDelEmailInterface {
+export interface DelEmailInterface {
     deleted_ids: string[];
     auth: AuthResponseInterface;
 }
 
-export interface GMOlderListInterface {
-    list: GMFetchEmailInterface[] | [];
+export interface OlderListInterface {
+    list: FetchEmailType[] | [];
 	count: number;
     email: string;
 	alias: string;
@@ -98,7 +98,7 @@ export interface GMOlderListInterface {
     auth: AuthResponseInterface;
 }
 
-export interface GMErrorInterface {
+export interface ErrorInterface {
     message: string;
     status: number;
 }

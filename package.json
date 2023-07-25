@@ -2,17 +2,15 @@
   "name": "guerrillamail-node-api",
   "version": "1.0.8",
   "description": "A nodejs api to interact with guerrilamail api",
-  "scripts": {
-    "build": "tsc",
-    "test": "jest --no-cache"
-  },
-  "prepare" : "yarn build",
-  "files": [
-    "lib/**/*"
-  ],
+  "author": "Ravin Mor",
+  "license": "MIT",
+  "homepage": "https://github.com/ravinmor/guerrillmail-node-api#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ravinmor/guerrillmail-node-api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ravinmor/guerrillmail-node-api/issues"
   },
   "keywords": [
     "guerrilamail",
@@ -20,12 +18,14 @@
     "antispam",
     "guerrilamail-api"
   ],
-  "author": "Ravin Mor",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ravinmor/guerrillmail-node-api/issues"
+  "files": [
+    "lib/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "jest --no-cache"
   },
-  "homepage": "https://github.com/ravinmor/guerrillmail-node-api#readme",
+  "prepare" : "yarn build",
   "dependencies": {
     "axios": "0.27.2"
   },

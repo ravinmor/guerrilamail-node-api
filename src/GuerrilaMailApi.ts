@@ -1,17 +1,17 @@
 import axios from "axios"
 
 import {
-    GMCheckEmailInterface,
-    GMDelEmailInterface,
-    GMEmailInterface,
-    GMEmailListInterface,
-    GMErrorInterface,
-    GMFetchEmailInterface,
-    GMGenericEmailDataInterface,
-    GMOlderListInterface,
-    GMSetUserInterface,
+    CheckEmailInterface,
+    DelEmailInterface,
+    EmailInterface,
+    EmailListInterface,
+    ErrorInterface,
+    FetchEmailType,
+    GenericEmailDataInterface,
+    OlderListInterface,
+    SetUserInterface,
     GuerrillaMailOptionsInterface
-} from "./interfaces/ApiResponse";
+} from "./Types";
 
 class GuerrilaMailApi {
     private url: string;
@@ -31,11 +31,11 @@ class GuerrilaMailApi {
     public alias_error: string = "";
     public site_id: number | undefined = undefined;
     public site: string = "";
-    public inbox: GMFetchEmailInterface[] | [] = [];
+    public inbox: FetchEmailType[] | [] = [];
 	public count: number | undefined = undefined;
 	public users: number | undefined = undefined;
     public deleted_ids: string[] = [];
-    public inboxDsc: GMFetchEmailInterface[] | [] = [];
+    public inboxDsc: FetchEmailType[] | [] = [];
 
     constructor(private options: GuerrillaMailOptionsInterface = {}) { 
         this.url = `http://api.guerrillamail.com/ajax.php?`;
@@ -46,7 +46,7 @@ class GuerrilaMailApi {
         }
     }
 
-    public async get_email_address(): Promise<GMEmailInterface> {
+    public async get_email_address(): Promise<EmailInterface> {
         const params = {
             ... this.params,
             f: 'get_email_address'
@@ -63,7 +63,7 @@ class GuerrilaMailApi {
         return emailData;
     }
 
-    public async set_email_user(email_user = this.email_user): Promise<GMSetUserInterface | GMErrorInterface> {
+    public async set_email_user(email_user = this.email_user): Promise<SetUserInterface | ErrorInterface> {
         if(!this.sid_token || this.sid_token === "") {
             return { status: 403, message: "No Session Token found. Please, provide one" }
         }
@@ -88,7 +88,7 @@ class GuerrilaMailApi {
         return emailData;
     }
 
-    public async check_email(sequency = 1): Promise<GMCheckEmailInterface | GMErrorInterface> {
+    public async check_email(sequency = 1): Promise<CheckEmailInterface | ErrorInterface> {
         if(!this.sid_token || this.sid_token === "") {
             return { status: 403, message: "No Session Token found. Please, provide one" }
         }
@@ -115,7 +115,7 @@ class GuerrilaMailApi {
         return emailData;
     }
 
-    public async get_email_list(sequency = "", limit = 20): Promise<GMEmailListInterface | GMErrorInterface> {
+    public async get_email_list(sequency = "", limit = 20): Promise<EmailListInterface | ErrorInterface> {
         if(!this.sid_token || this.sid_token === "") {
             return { status: 403, message: "No Session Token found. Please, provide one" }
         }
@@ -143,7 +143,7 @@ class GuerrilaMailApi {
         return emailData;
     }
 
-    public async fetch_email(email_id: number): Promise<GMFetchEmailInterface | GMErrorInterface>  {
+    public async fetch_email(email_id: number): Promise<FetchEmailType | ErrorInterface>  {
         if(!this.sid_token || this.sid_token === "") {
             return { status: 403, message: "No Session Token found. Please, provide one" }
         }
@@ -164,7 +164,7 @@ class GuerrilaMailApi {
         return emailData;
     }
 
-    public async forget_me(): Promise<boolean | GMErrorInterface>  {
+    public async forget_me(): Promise<boolean | ErrorInterface>  {
         if(!this.sid_token || this.sid_token === "") {
             return { status: 403, message: "No Session Token found. Please, provide one" }
         }
@@ -191,7 +191,7 @@ class GuerrilaMailApi {
         return emailData;
     }
 
-    public async del_email(email_ids: number[]): Promise<GMDelEmailInterface | GMErrorInterface>  {
+    public async del_email(email_ids: number[]): Promise<DelEmailInterface | ErrorInterface>  {
         if(!this.sid_token || this.sid_token === "") {
             return { status: 403, message: "No Session Token found. Please, provide one" }
         }
@@ -215,7 +215,7 @@ class GuerrilaMailApi {
         return emailData;
     }
 
-    public async get_older_list(sequency = "", limit = 20): Promise<GMOlderListInterface | GMErrorInterface>  {
+    public async get_older_list(sequency = "", limit = 20): Promise<OlderListInterface | ErrorInterface>  {
         if(!this.sid_token || this.sid_token === "") {
             return { status: 403, message: "No Session Token found. Please, provide one" }
         }
@@ -246,7 +246,7 @@ class GuerrilaMailApi {
         return emailData;
     }
 
-    public async remaining_time(): Promise<number | GMErrorInterface> {
+    public async remaining_time(): Promise<number | ErrorInterface> {
         if(!this.email_creation) {
             return { status: 403, message: "No Session Started. Please, start a session." }
         }
@@ -261,7 +261,7 @@ class GuerrilaMailApi {
         return timeDifferenceInMilliseconds / (1000 * 60);
     }
 
-    private async updateProperties(emailData: GMGenericEmailDataInterface): Promise<void> {
+    private async updateProperties(emailData: GenericEmailDataInterface): Promise<void> {
         this.email_address     = emailData.email_addr ? emailData.email_addr : this.email_address;
         this.email_user        = emailData.email_addr ? emailData.email_addr.split('@')[0] : this.email_user;
         this.email_timestamp   = emailData.email_timestamp ? emailData.email_timestamp : this.email_timestamp;
