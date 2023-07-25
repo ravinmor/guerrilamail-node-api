@@ -41,7 +41,7 @@ await tempMail.fetch_email(tempMail.inbox[0].mail_id); // Shows one specific ema
 await tempMail.forget_me();                            // Delete the temporary email.
 await tempMail.del_email(tempMail.inbox[0].mail_id);   // Delete one email on inbox.
 await tempMail.del_email();                            // List mail inbox in descending order
-await tempMail.remaining_time();                       // Shows how much time the temporary email has left
+const remainingTime = await tempMail.remaining_time(); // Shows how much time the temporary email has left
 
 ```
 
